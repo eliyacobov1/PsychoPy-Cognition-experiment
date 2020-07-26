@@ -1,0 +1,32 @@
+Cognition experiment
+
+- I implemented the experiment using psychoPy. Every phase of the experiment is within
+a single python script that I have wrote.
+
+- The script is implemented in a generic manner. The user can manually define the following:
+
+- The directory of the experiments pictures
+- The desired number of trials in the experiment
+- The duration of each trial type in the experiment
+- The number of times each of the sounds in experiment will be played.
+
+In order to implement the requested tones, I have built a python script that
+generates pure tones with the duration, frequency and volume that can be defined (as magic numbers)
+by the user. Notice that I have also submitted that script.
+
+As part of the experiment, I have decided to additonaly program the script in a way that
+will enable the user to set the number of trials to be higher than the number of images.
+In that case, the images will be shuffled each time all of the images were shown (For instance,
+if there are 20 images and trial number is 40, 20 images will be shown in a random order and 
+afterwards, the 20 images will be displayed again in a *different* random order). Same goes for the
+random order in which the various sounds are played.
+
+Also, as requested, the experiments records (trial times) are exported to an external csv file once
+the program finlizes it's run.
+
+Submitted files:
+- 440.wav Sound file for the 440 frequency sounds
+- 500.wav Sound file for the 500 frequency sounds
+- tone_generator.py Script that I have used to generate the sounds
+- experiment.py Main script that is used by psychpy for the experiment
+- experiment.psyexp The main executable file 
