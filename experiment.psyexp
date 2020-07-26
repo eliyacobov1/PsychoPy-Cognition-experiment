@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2020.1.3">
+  <Settings>
+    <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
+    <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant':'', 'session':'001'}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="height" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="(1024, 768)" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="untitled" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="trial">
+      <CodeComponent name="code_2">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="/* Syntax Error: Fix Python code */" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="import os&amp;#10;import time&amp;#10;import random&amp;#10;import csv&amp;#10;import datetime&amp;#10;&amp;#10;# The time period for each of the trial types&amp;#10;SOUND_PERIOD = 0.2&amp;#10;IMAGE_PERIOD = 0.4&amp;#10;FIXATION_PERIOD = 0.1&amp;#10;&amp;#10;NUM_TRIALS = 20  # The number of trials&amp;#10;&amp;#10;directory = '.\pics'  # directory of the experiment's images&amp;#10;&amp;#10;# Trial type names&amp;#10;SPACE_PRESSED = 'Space'&amp;#10;FIXATION_APPEARANCE = 'Fixation'&amp;#10;IMAGE_APPEARANCE = 'Image'&amp;#10;SOUND_PLAYED = 'Sound'&amp;#10;&amp;#10;# The number of times each sound will be played&amp;#10;NUM_SOUND_1 = 15&amp;#10;NUM_SOUND_2 = 5&amp;#10;&amp;#10;# array to contain documentation details of the experiment&amp;#10;exp_log = []&amp;#10;&amp;#10;temp = [os.path.join(directory, filename) for filename in os.listdir(directory)]&amp;#10;&amp;#10;images = [visual.ImageStim(win, image=temp[i], pos=(0, 0),&amp;#10;                           size=(1.8, 1)) for i in range(len(temp))]&amp;#10;&amp;#10;fixation = visual.ShapeStim(&amp;#10;    win=win, name='polygon', vertices='cross',&amp;#10;    size=(0.09, 0.09),&amp;#10;    ori=0, pos=(0, 0),&amp;#10;    lineWidth=1, lineColor=[1, 1, 1], lineColorSpace='rgb',&amp;#10;    fillColor=[1, 1, 1], fillColorSpace='rgb',&amp;#10;    opacity=1, depth=0.0, interpolate=True)&amp;#10;&amp;#10;sound_1 = sound.Sound('./440.wav', secs=1.0, stereo=True, hamming=True)&amp;#10;sound_2 = sound.Sound('./500.wav', secs=1.0, stereo=True, hamming=True)&amp;#10;&amp;#10;sounds = [item for sublist in [[sound_1 for i in range(NUM_SOUND_1)],&amp;#10;                               [sound_2 for i in range(NUM_SOUND_2)]] for item in sublist]&amp;#10;&amp;#10;welcome_text = visual.TextStim(win=win, name='text',&amp;#10;                               text='Press Space to start',&amp;#10;                               font='Arial',&amp;#10;                               pos=(0, 0), height=0.1, wrapWidth=None, ori=0,&amp;#10;                               color='white', colorSpace='rgb', opacity=1,&amp;#10;                               languageStyle='LTR',&amp;#10;                               depth=0.0)&amp;#10;&amp;#10;end_text = visual.TextStim(win=win, name='text',&amp;#10;                           text='Experiment Ended!\nPress ESC to exit',&amp;#10;                           font='Arial',&amp;#10;                           pos=(0, 0), height=0.1, wrapWidth=None, ori=0,&amp;#10;                           color='white', colorSpace='rgb', opacity=1,&amp;#10;                           languageStyle='LTR',&amp;#10;                           depth=0.0)&amp;#10;&amp;#10;continueRoutine = True&amp;#10;&amp;#10;welcome_text.setAutoDraw(True)  # The initial screen&amp;#10;win.flip(True)&amp;#10;&amp;#10;while True:  # Wait for the user to hit space&amp;#10;    pressed_key = event.getKeys()&amp;#10;    if pressed_key:&amp;#10;        if pressed_key[0] == 'space':&amp;#10;            break&amp;#10;&amp;#10;welcome_text.setAutoDraw(False)&amp;#10;win.flip(True)&amp;#10;time.sleep(2)&amp;#10;&amp;#10;# while continueRoutine:&amp;#10;start_time = time.clock()  # initiate experiment timer&amp;#10;&amp;#10;for i in range(NUM_TRIALS):  # start the loop to display images&amp;#10;    if i % len(images) == 0:&amp;#10;        # Shuffle at the beginning of the experiment&amp;#10;        # and each time all images were displayed&amp;#10;        random.shuffle(temp)&amp;#10;        random.shuffle(sounds)&amp;#10;&amp;#10;    time_before = time.clock() if i != 0 else start_time&amp;#10;    fixation.setAutoDraw(True)  # display fixation&amp;#10;    win.flip(True)&amp;#10;    time.sleep(FIXATION_PERIOD)&amp;#10;    fixation.setAutoDraw(False)&amp;#10;    time_after = time.clock()&amp;#10;    exp_log.append([FIXATION_APPEARANCE, time_before - start_time,&amp;#10;                    time_after - start_time])&amp;#10;&amp;#10;    pressed_key = event.getKeys()  # Get the key pressed&amp;#10;    if pressed_key:  # if there was an actual key pressed:&amp;#10;        if pressed_key[0] == 'space':&amp;#10;            time_before = time.clock()&amp;#10;            exp_log.append([SPACE_PRESSED, time_before - start_time,&amp;#10;                            time_before - start_time])&amp;#10;&amp;#10;    time_before = time.clock()&amp;#10;    images[i % len(images)].setAutoDraw(True)  # display image&amp;#10;    win.flip(True)&amp;#10;&amp;#10;    sound_start = time.clock()  # The time when the sound starts playing&amp;#10;    sound_timing = float(random.randint(50, 150)) / 1000&amp;#10;    time.sleep(sound_timing)&amp;#10;    sounds[i % len(images)].play()&amp;#10;    time.sleep(SOUND_PERIOD)&amp;#10;    sounds[i % len(images)].stop()&amp;#10;    sound_end = time.clock()&amp;#10;    exp_log.append([SOUND_PLAYED, sound_start - start_time,&amp;#10;                    sound_end - start_time])&amp;#10;&amp;#10;    time.sleep(IMAGE_PERIOD - (SOUND_PERIOD + sound_timing))&amp;#10;    images[i % len(images)].setAutoDraw(False)&amp;#10;    win.flip(True)&amp;#10;    time_after = time.clock()&amp;#10;    exp_log.append([IMAGE_APPEARANCE, time_before - start_time,&amp;#10;                    time_after - start_time])&amp;#10;&amp;#10;    if i == NUM_TRIALS - 1:&amp;#10;        time.sleep(2)&amp;#10;&amp;#10;        end_text.setAutoDraw(True)  # The initial screen&amp;#10;        win.flip(True)&amp;#10;&amp;#10;        while not defaultKeyboard.getKeys(keyList=[&quot;escape&quot;]):&amp;#10;            pass&amp;#10;&amp;#10;    # check for quit (typically the Esc key)&amp;#10;    if endExpNow or defaultKeyboard.getKeys(keyList=[&quot;escape&quot;]):&amp;#10;        break&amp;#10;&amp;#10;# write the final documentation csv file&amp;#10;date = str(datetime.datetime.now().strftime(&quot;%y%b%d_%H_%M_%S&quot;))&amp;#10;with open('./results_' + date + '.csv',&amp;#10;          'w', newline='') as file:&amp;#10;    writer = csv.writer(file)&amp;#10;    writer.writerow([&quot;Trial type&quot;, &quot;Start Time(Sec)&quot;, &quot;End Time(Sec)&quot;])&amp;#10;    for log_entry in exp_log:&amp;#10;        writer.writerow(log_entry)&amp;#10;&amp;#10;win.close()&amp;#10;core.quit()&amp;#10;" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code_2" valType="code"/>
+      </CodeComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="trial"/>
+  </Flow>
+</PsychoPy2experiment>
